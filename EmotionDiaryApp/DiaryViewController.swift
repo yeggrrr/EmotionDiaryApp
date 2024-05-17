@@ -52,7 +52,6 @@ class DiaryViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
-        addCount()
      
     }
 
@@ -190,10 +189,35 @@ class DiaryViewController: UIViewController {
         sadCountLabel.font = .systemFont(ofSize:  17)
         
     }
-    
-    func addCount() {
-        
-    }
 
+    @IBAction func happyButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func loveButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func likeButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func embarrassButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func upsetButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func gloomyButtonClicked(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func boredButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func hungryButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func sadButtonClicked(_ sender: UIButton) {
+    }
+    
+    
 }
 
