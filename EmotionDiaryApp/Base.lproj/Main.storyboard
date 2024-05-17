@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ix8-am-Oj3">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ix8-am-Oj3" userLabel="전체 Stack View">
                                 <rect key="frame" x="36.666666666666657" y="300.66666666666669" width="320" height="320.00000000000006"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XYG-J6-ZCp">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XYG-J6-ZCp" userLabel="1열 Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjk-kp-lmE">
@@ -29,21 +30,27 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWR-dz-cxO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="79"/>
                                                                 <color key="backgroundColor" red="0.84326219120000001" green="0.74096082320000001" blue="0.90846488400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="KWR-dz-cxO" secondAttribute="height" multiplier="100:79" id="caR-C9-ttV"/>
+                                                                </constraints>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="happyButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cfy-4U-VQq"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e5S-hT-suy">
-                                                                <rect key="frame" x="0.0" y="79.666666666666629" width="100" height="20.333333333333329"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="e5S-hT-suy">
+                                                                <rect key="frame" x="0.0" y="79" width="100" height="21"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOZ-SU-ItC">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXI-oO-sfI">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="25" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -76,18 +83,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="loveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H1F-p9-kWf"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nrt-bP-aJC">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nrt-bP-aJC">
                                                                 <rect key="frame" x="0.0" y="79.666666666666629" width="100" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URb-Ho-4kT">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PK-SJ-gQh">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="25" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -121,18 +131,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="likeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ik1-17-LEO"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vBv-0F-88u">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vBv-0F-88u">
                                                                 <rect key="frame" x="0.0" y="79.666666666666629" width="100" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4h-bm-ZW1">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3V-bK-pyF">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="77" y="0.0" width="23" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -158,7 +171,7 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fJL-hP-udy">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fJL-hP-udy" userLabel="2열 Stack View">
                                         <rect key="frame" x="0.0" y="110" width="320" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3N8-5G-Fdj">
@@ -171,18 +184,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="embarrassButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PF1-Un-j1Q"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Se-vk-BXZ">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5Se-vk-BXZ">
                                                                 <rect key="frame" x="0.0" y="79.666666666666629" width="100" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IU-sD-F2w">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnw-1B-zgB">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="25" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -215,18 +231,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="upsetButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysj-sj-eCV"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ODH-aV-P9r">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ODH-aV-P9r">
                                                                 <rect key="frame" x="0.0" y="79.666666666666629" width="100" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzr-f8-hXm">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoK-sM-s4c">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="25" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -260,18 +279,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="gloomyButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5oZ-MD-WjJ"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xhe-65-lXf">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="xhe-65-lXf">
                                                                 <rect key="frame" x="0.0" y="79.666666666666629" width="100" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5P-di-wxP">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fql-EQ-bLK">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="25" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -297,7 +319,7 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fZ0-zV-bNw">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fZ0-zV-bNw" userLabel="3열 Stack View">
                                         <rect key="frame" x="0.0" y="219.99999999999994" width="320" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1h-Wb-hrl">
@@ -310,18 +332,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="boredButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gUS-p2-oku"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZyO-Dz-Bp4">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ZyO-Dz-Bp4">
                                                                 <rect key="frame" x="0.0" y="79.666666666666742" width="100" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foX-z1-TOi">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGH-fd-JYc">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="25" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -354,18 +379,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="hungryButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Zn-bu-94c"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4SO-VX-Q5B">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="4SO-VX-Q5B">
                                                                 <rect key="frame" x="0.0" y="79.666666666666742" width="100" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-Nb-KEL">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1T-lu-AHN">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="25" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -399,18 +427,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="79.666666666666671"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="sadButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKS-6i-KcE"/>
+                                                                </connections>
                                                             </button>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HyU-nO-PDW">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="HyU-nO-PDW">
                                                                 <rect key="frame" x="0.0" y="79.666666666666742" width="100" height="20.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-oE-DqA">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mM0-s6-HEF">
-                                                                        <rect key="frame" x="76" y="0.0" width="24" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="25" height="20.333333333333332"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -447,12 +478,42 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WLd-I2-nUt">
-                        <barButtonItem key="leftBarButtonItem" image="list.bullet" catalog="system" id="437-Cn-iVQ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="437-Cn-iVQ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="boredButton" destination="avW-sW-yk3" id="PKm-45-088"/>
+                        <outlet property="boredCountLabel" destination="SGH-fd-JYc" id="YvL-9y-VIN"/>
+                        <outlet property="boredLabel" destination="foX-z1-TOi" id="le9-nd-esy"/>
+                        <outlet property="detailBarButtonItem" destination="437-Cn-iVQ" id="esh-EM-KsC"/>
+                        <outlet property="embarrassButton" destination="DpK-fj-Mhh" id="Se6-9W-MUv"/>
+                        <outlet property="embarrassCountLabel" destination="Wnw-1B-zgB" id="XcP-iV-rwE"/>
+                        <outlet property="embarrassLabel" destination="0IU-sD-F2w" id="Jox-1d-Kfb"/>
+                        <outlet property="gloomyButton" destination="fWZ-2Q-stL" id="WAF-50-PXP"/>
+                        <outlet property="gloomyCountLabel" destination="fql-EQ-bLK" id="PpP-8o-WPf"/>
+                        <outlet property="gloomyLabel" destination="A5P-di-wxP" id="f7O-pK-Tw1"/>
+                        <outlet property="happyButton" destination="KWR-dz-cxO" id="Mwt-Ot-YHl"/>
+                        <outlet property="happyCountLabel" destination="YXI-oO-sfI" id="u6f-Vh-RNO"/>
+                        <outlet property="happyLabel" destination="hOZ-SU-ItC" id="WbI-CG-UDg"/>
+                        <outlet property="hungryButton" destination="83X-2F-Yhd" id="8qR-fr-d0V"/>
+                        <outlet property="hungryCountLabel" destination="b1T-lu-AHN" id="mgc-PX-KHX"/>
+                        <outlet property="hungryLabel" destination="XnN-Nb-KEL" id="7za-AF-zNT"/>
+                        <outlet property="likeButton" destination="gj2-8V-fRg" id="G1n-xd-7k0"/>
+                        <outlet property="likeCountLabel" destination="h3V-bK-pyF" id="kcg-2Q-Bbr"/>
+                        <outlet property="likeLabel" destination="I4h-bm-ZW1" id="epL-5q-tgS"/>
+                        <outlet property="loveButton" destination="Tmj-Ql-Brx" id="KHQ-G3-9ER"/>
+                        <outlet property="loveCountLabel" destination="5PK-SJ-gQh" id="FEI-LP-HK2"/>
+                        <outlet property="loveLabel" destination="URb-Ho-4kT" id="Uyn-Uz-quc"/>
+                        <outlet property="sadButton" destination="gup-Jo-RSP" id="jPx-Eo-ABR"/>
+                        <outlet property="sadCountLabel" destination="mM0-s6-HEF" id="KZx-Gz-Xkc"/>
+                        <outlet property="sadLabel" destination="dNd-oE-DqA" id="GE2-Lj-GPI"/>
+                        <outlet property="upsetButton" destination="gYe-xe-9NH" id="vks-dL-gy0"/>
+                        <outlet property="upsetCountLabel" destination="DoK-sM-s4c" id="LTH-7g-RHA"/>
+                        <outlet property="upsetLabel" destination="bzr-f8-hXm" id="Fqg-Rl-gEH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1236" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wza-Uq-ptE">
@@ -474,7 +535,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.bullet" catalog="system" width="128" height="87"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

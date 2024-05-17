@@ -9,7 +9,6 @@ import UIKit
 
 class DiaryViewController: UIViewController {
 
-    
     @IBOutlet var detailBarButtonItem: UIBarButtonItem!
     
     @IBOutlet var happyButton: UIButton!
@@ -47,6 +46,16 @@ class DiaryViewController: UIViewController {
     @IBOutlet var sadButton: UIButton!
     @IBOutlet var sadLabel: UILabel!
     @IBOutlet var sadCountLabel: UILabel!
+    
+    var happyCount: Int = 0
+    var loveCount: Int = 0
+    var likeCount: Int = 0
+    var embarrassCount: Int = 0
+    var upsetCount: Int = 0
+    var gloomyCount: Int = 0
+    var boredCount: Int = 0
+    var hungryCount: Int = 0
+    var sadCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -191,33 +200,67 @@ class DiaryViewController: UIViewController {
     }
 
     @IBAction func happyButtonClicked(_ sender: UIButton) {
+        
+        happyCount += 1
+        
+        let stringCount = String(happyCount)
+        happyCountLabel.text = stringCount
     }
     
     @IBAction func loveButtonClicked(_ sender: UIButton) {
+        loveCount += 1
+        
+        let stringCount = String(loveCount)
+        loveCountLabel.text = stringCount
     }
     
     @IBAction func likeButtonClicked(_ sender: UIButton) {
+        likeCount += 1
+        
+        let stringCount = String(likeCount)
+        likeCountLabel.text = stringCount
     }
     
     @IBAction func embarrassButtonClicked(_ sender: UIButton) {
+        embarrassCount += 1
+        
+        let stringCount = String(embarrassCount)
+        embarrassCountLabel.text = stringCount
     }
     
     @IBAction func upsetButtonClicked(_ sender: UIButton) {
+        upsetCount += 1
+        
+        let stringCount = String(upsetCount)
+        upsetCountLabel.text = stringCount
     }
     
     @IBAction func gloomyButtonClicked(_ sender: UIButton) {
+        gloomyCount += 1
+        
+        let stringCount = String(gloomyCount)
+        gloomyCountLabel.text = stringCount
     }
     
-    
     @IBAction func boredButtonClicked(_ sender: UIButton) {
+        boredCount += 1
+        
+        let stringCount = String(boredCount)
+        boredCountLabel.text = stringCount
     }
     
     @IBAction func hungryButtonClicked(_ sender: UIButton) {
+        hungryCount += 1
+        
+        let stringCount = String(hungryCount)
+        hungryCountLabel.text = stringCount
     }
     
     @IBAction func sadButtonClicked(_ sender: UIButton) {
+        sadCount += 1
+        
+        let stringCount = String(sadCount)
+        sadCountLabel.text = stringCount
     }
-    
-    
 }
 
