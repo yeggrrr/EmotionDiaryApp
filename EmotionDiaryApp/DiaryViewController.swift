@@ -47,220 +47,84 @@ class DiaryViewController: UIViewController {
     @IBOutlet var sadLabel: UILabel!
     @IBOutlet var sadCountLabel: UILabel!
     
-    var happyCount: Int = 0
-    var loveCount: Int = 0
-    var likeCount: Int = 0
-    var embarrassCount: Int = 0
-    var upsetCount: Int = 0
-    var gloomyCount: Int = 0
-    var boredCount: Int = 0
-    var hungryCount: Int = 0
-    var sadCount: Int = 0
+    @IBOutlet var countLabelList: [UILabel]!
+    
+    var count = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationUI()
         configureUI()
-     
+    
     }
 
     func configureUI() {
+        // buttonUI
+        buttonUI(happyButton, image: "행복")
+        buttonUI(loveButton, image: "사랑")
+        buttonUI(likeButton, image: "좋아")
+        buttonUI(embarrassButton, image: "당황")
+        buttonUI(upsetButton, image: "속상")
+        buttonUI(gloomyButton, image: "우울")
+        buttonUI(boredButton, image: "심심")
+        buttonUI(hungryButton, image: "배고파")
+        buttonUI(sadButton, image: "슬퍼")
+        
+        // LabelUI
+        labelUI(happyLabel, "행복해")
+        labelUI(loveLabel, "사랑해")
+        labelUI(likeLabel, "좋아해")
+        labelUI(embarrassLabel, "당황해")
+        labelUI(upsetLabel, "속상해")
+        labelUI(gloomyLabel, "우울해")
+        labelUI(boredLabel, "심심해")
+        labelUI(hungryLabel, "배고파")
+        labelUI(sadLabel, "슬퍼해")
+        
+        // countLabelUI
+        countLabelUI(happyCountLabel)
+        countLabelUI(loveCountLabel)
+        countLabelUI(likeCountLabel)
+        countLabelUI(embarrassCountLabel)
+        countLabelUI(upsetCountLabel)
+        countLabelUI(gloomyCountLabel)
+        countLabelUI(boredCountLabel)
+        countLabelUI(hungryCountLabel)
+        countLabelUI(sadCountLabel)
+    }
+    
+    
+    func buttonUI(_ button: UIButton, image: String) {
+        button.setImage(UIImage(named: image), for: .normal)
+        button.backgroundColor = .clear
+    }
+    
+    func labelUI(_ label: UILabel, _ text: String) {
+        label.text = text
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 17)
+    }
+    
+    func countLabelUI(_ countLabel: UILabel) {
+        countLabel.text = "0"
+        countLabel.textColor = .systemPink
+        countLabel.textAlignment = .center
+        countLabel.font = .systemFont(ofSize:  17)
+    }
+    
+    func navigationUI() {
         
         title = "감정 다이어리"
-        
         detailBarButtonItem.image = UIImage(systemName: "list.bullet")
-        
-        // happy
-        happyButton.setImage(UIImage(named: "행복"), for: .normal)
-        happyButton.backgroundColor = .clear
-        
-        happyLabel.text = "행복해"
-        happyLabel.textColor = .black
-        happyLabel.textAlignment = .center
-        happyLabel.font = .systemFont(ofSize: 17)
-        
-        happyCountLabel.text = "0"
-        happyCountLabel.textColor = .systemPink
-        happyCountLabel.textAlignment = .center
-        happyCountLabel.font = .systemFont(ofSize:  17)
-        
-        // love
-        loveButton.setImage(UIImage(named: "사랑"), for: .normal)
-        loveButton.backgroundColor = .clear
-        
-        loveLabel.text = "사랑해"
-        loveLabel.textColor = .black
-        loveLabel.textAlignment = .center
-        loveLabel.font = .systemFont(ofSize: 17)
-        
-        loveCountLabel.text = "0"
-        loveCountLabel.textColor = .systemPink
-        loveCountLabel.textAlignment = .center
-        loveCountLabel.font = .systemFont(ofSize:  17)
-        
-        
-        // like
-        likeButton.setImage(UIImage(named: "좋아"), for: .normal)
-        likeButton.backgroundColor = .clear
-        
-        likeLabel.text = "좋아해"
-        likeLabel.textColor = .black
-        likeLabel.textAlignment = .center
-        likeLabel.font = .systemFont(ofSize: 17)
-        
-        likeCountLabel.text = "0"
-        likeCountLabel.textColor = .systemPink
-        likeCountLabel.textAlignment = .center
-        likeCountLabel.font = .systemFont(ofSize:  17)
-        
-        // embarrass
-        embarrassButton.setImage(UIImage(named: "당황"), for: .normal)
-        embarrassButton.backgroundColor = .clear
-        
-        embarrassLabel.text = "당황해"
-        embarrassLabel.textColor = .black
-        embarrassLabel.textAlignment = .center
-        embarrassLabel.font = .systemFont(ofSize: 17)
-        
-        embarrassCountLabel.text = "0"
-        embarrassCountLabel.textColor = .systemPink
-        embarrassCountLabel.textAlignment = .center
-        embarrassCountLabel.font = .systemFont(ofSize:  17)
-        
-        // upset
-        upsetButton.setImage(UIImage(named: "속상"), for: .normal)
-        upsetButton.backgroundColor = .clear
-    
-        upsetLabel.text = "속상해"
-        upsetLabel.textColor = .black
-        upsetLabel.textAlignment = .center
-        upsetLabel.font = .systemFont(ofSize: 17)
-        
-        upsetCountLabel.text = "0"
-        upsetCountLabel.textColor = .systemPink
-        upsetCountLabel.textAlignment = .center
-        upsetCountLabel.font = .systemFont(ofSize:  17)
-        
-        // gloomy
-        gloomyButton.setImage(UIImage(named: "우울"), for: .normal)
-        gloomyButton.backgroundColor = .clear
-        
-        gloomyLabel.text = "당황해"
-        gloomyLabel.textColor = .black
-        gloomyLabel.textAlignment = .center
-        gloomyLabel.font = .systemFont(ofSize: 17)
-        
-        gloomyCountLabel.text = "0"
-        gloomyCountLabel.textColor = .systemPink
-        gloomyCountLabel.textAlignment = .center
-        gloomyCountLabel.font = .systemFont(ofSize:  17)
-        
-        // bored
-        boredButton.setImage(UIImage(named: "심심"), for: .normal)
-        boredButton.backgroundColor = .clear
-        
-        boredLabel.text = "심심해"
-        boredLabel.textColor = .black
-        boredLabel.textAlignment = .center
-        boredLabel.font = .systemFont(ofSize: 17)
-        
-        boredCountLabel.text = "0"
-        boredCountLabel.textColor = .systemPink
-        boredCountLabel.textAlignment = .center
-        boredCountLabel.font = .systemFont(ofSize:  17)
-        
-        // hungry
-        hungryButton.setImage(UIImage(named: "배고파"), for: .normal)
-        hungryButton.backgroundColor = .clear
-        
-        hungryLabel.text = "배고파"
-        hungryLabel.textColor = .black
-        hungryLabel.textAlignment = .center
-        hungryLabel.font = .systemFont(ofSize: 17)
-        
-        hungryCountLabel.text = "0"
-        hungryCountLabel.textColor = .systemPink
-        hungryCountLabel.textAlignment = .center
-        hungryCountLabel.font = .systemFont(ofSize:  17)
-        
-        // sad
-        sadButton.setImage(UIImage(named: "슬퍼"), for: .normal)
-        sadButton.backgroundColor = .clear
-        
-        sadLabel.text = "슬퍼해"
-        sadLabel.textColor = .black
-        sadLabel.textAlignment = .center
-        sadLabel.font = .systemFont(ofSize: 17)
-        
-        sadCountLabel.text = "0"
-        sadCountLabel.textColor = .systemPink
-        sadCountLabel.textAlignment = .center
-        sadCountLabel.font = .systemFont(ofSize:  17)
-        
-    }
-
-    @IBAction func happyButtonClicked(_ sender: UIButton) {
-        
-        happyCount += 1
-        
-        let stringCount = String(happyCount)
-        happyCountLabel.text = stringCount
     }
     
-    @IBAction func loveButtonClicked(_ sender: UIButton) {
-        loveCount += 1
+    @IBAction func emotionButtonClicked(_ sender: UIButton) {
         
-        let stringCount = String(loveCount)
-        loveCountLabel.text = stringCount
-    }
-    
-    @IBAction func likeButtonClicked(_ sender: UIButton) {
-        likeCount += 1
+        count[sender.tag] += 1
+        countLabelList[sender.tag].text = "\(count[sender.tag])"
         
-        let stringCount = String(likeCount)
-        likeCountLabel.text = stringCount
-    }
-    
-    @IBAction func embarrassButtonClicked(_ sender: UIButton) {
-        embarrassCount += 1
-        
-        let stringCount = String(embarrassCount)
-        embarrassCountLabel.text = stringCount
-    }
-    
-    @IBAction func upsetButtonClicked(_ sender: UIButton) {
-        upsetCount += 1
-        
-        let stringCount = String(upsetCount)
-        upsetCountLabel.text = stringCount
-    }
-    
-    @IBAction func gloomyButtonClicked(_ sender: UIButton) {
-        gloomyCount += 1
-        
-        let stringCount = String(gloomyCount)
-        gloomyCountLabel.text = stringCount
-    }
-    
-    @IBAction func boredButtonClicked(_ sender: UIButton) {
-        boredCount += 1
-        
-        let stringCount = String(boredCount)
-        boredCountLabel.text = stringCount
-    }
-    
-    @IBAction func hungryButtonClicked(_ sender: UIButton) {
-        hungryCount += 1
-        
-        let stringCount = String(hungryCount)
-        hungryCountLabel.text = stringCount
-    }
-    
-    @IBAction func sadButtonClicked(_ sender: UIButton) {
-        sadCount += 1
-        
-        let stringCount = String(sadCount)
-        sadCountLabel.text = stringCount
     }
 }
 
