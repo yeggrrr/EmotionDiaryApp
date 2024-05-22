@@ -13,6 +13,7 @@
 		6840C48C2BF73A6F0020EABC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6840C48B2BF73A6F0020EABC /* Base */; };
 		6840C48E2BF73A700020EABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6840C48D2BF73A700020EABC /* Assets.xcassets */; };
 		6840C4912BF73A700020EABC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6840C4902BF73A700020EABC /* Base */; };
+		68C771692BFE339C0068CE88 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C771682BFE339C0068CE88 /* DataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6840C48D2BF73A700020EABC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6840C4902BF73A700020EABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6840C4922BF73A700020EABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68C771682BFE339C0068CE88 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				6840C4842BF73A6F0020EABC /* AppDelegate.swift */,
 				6840C4862BF73A6F0020EABC /* SceneDelegate.swift */,
 				6840C4882BF73A6F0020EABC /* DiaryViewController.swift */,
+				68C771682BFE339C0068CE88 /* DataStorage.swift */,
 				6840C48A2BF73A6F0020EABC /* Main.storyboard */,
 				6840C48D2BF73A700020EABC /* Assets.xcassets */,
 				6840C48F2BF73A700020EABC /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				6840C4892BF73A6F0020EABC /* DiaryViewController.swift in Sources */,
 				6840C4852BF73A6F0020EABC /* AppDelegate.swift in Sources */,
 				6840C4872BF73A6F0020EABC /* SceneDelegate.swift in Sources */,
+				68C771692BFE339C0068CE88 /* DataStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

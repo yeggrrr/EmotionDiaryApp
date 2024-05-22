@@ -450,11 +450,23 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOs-jY-XrS">
+                                <rect key="frame" x="159" y="709.66666666666663" width="75" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="resetButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a8k-1o-Uax"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qOs-jY-XrS" secondAttribute="trailing" constant="159" id="EpF-6V-vtg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qOs-jY-XrS" secondAttribute="bottom" constant="74" id="FuP-6G-haq"/>
                             <constraint firstItem="Ix8-am-Oj3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="HWD-6d-IQe"/>
+                            <constraint firstItem="qOs-jY-XrS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="XaC-5x-EGV"/>
+                            <constraint firstItem="qOs-jY-XrS" firstAttribute="top" secondItem="Ix8-am-Oj3" secondAttribute="bottom" constant="58.666666666666629" id="eVJ-aX-H01"/>
                             <constraint firstItem="Ix8-am-Oj3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vCY-Ov-Ma5"/>
                         </constraints>
                     </view>
@@ -484,6 +496,7 @@
                         <outlet property="loveButton" destination="Tmj-Ql-Brx" id="KHQ-G3-9ER"/>
                         <outlet property="loveCountLabel" destination="5PK-SJ-gQh" id="FEI-LP-HK2"/>
                         <outlet property="loveLabel" destination="URb-Ho-4kT" id="Uyn-Uz-quc"/>
+                        <outlet property="resetButton" destination="qOs-jY-XrS" id="ayH-Wi-EJb"/>
                         <outlet property="sadButton" destination="gup-Jo-RSP" id="jPx-Eo-ABR"/>
                         <outlet property="sadCountLabel" destination="mM0-s6-HEF" id="KZx-Gz-Xkc"/>
                         <outlet property="sadLabel" destination="dNd-oE-DqA" id="GE2-Lj-GPI"/>

@@ -48,13 +48,26 @@ class DiaryViewController: UIViewController {
     
     @IBOutlet var countLabelList: [UILabel]!
     
-    var count = Array<Int>.init(repeating: 0, count: 9)
+    @IBOutlet var resetButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+        initializeDataList()
         navigationUI()
         configureUI()
+    }
+    
+    func initializeDataList() {
+        DataStorage.shared.dataList = fetchData()
+        for i in 0..<countLabelList.count {
+            countLabelList[i].text = "\(DataStorage.shared.dataList[i])"
+        }
+    }
+    
+    func fetchData() -> [Int] {
+        guard let count = UserDefaults.standard.array(forKey: "count")  as? [Int] else { return [] }
+        return count
     }
 
     func configureUI() {
@@ -92,9 +105,17 @@ class DiaryViewController: UIViewController {
     }
     
     @IBAction func emotionButtonClicked(_ sender: UIButton) {
-        count[sender.tag] += 1
-        countLabelList[sender.tag].text = "\(count[sender.tag])"
+        let index = sender.tag
+        DataStorage.shared.dataList[index] += 1
+        countLabelList[index].text = "\(DataStorage.shared.dataList[index])"
+        
+        let emotionCount = DataStorage.shared.dataList
+        UserDefaults.standard.setValue(emotionCount, forKey: "count")
     }
+    
+    @IBAction func resetButtonClicked(_ sender: UIButton) {
+    }
+    
 }
 
 extension UIButton {
