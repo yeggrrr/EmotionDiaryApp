@@ -10,5 +10,5 @@ import Foundation
 class DataStorage {
     static let shared = DataStorage()
     
-    var dataList: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var dataList = Array<Int>.init(repeating: 0, count: 9)
 }

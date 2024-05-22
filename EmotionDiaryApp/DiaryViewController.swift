@@ -52,13 +52,17 @@ class DiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        initializeDataList()
+        
+        initializeDataList(reset: false)
         navigationUI()
         configureUI()
     }
     
-    func initializeDataList() {
+    func initializeDataList(reset: Bool) {
+        if reset {
+            UserDefaults.standard.removeObject(forKey: "count")
+        }
+        
         DataStorage.shared.dataList = fetchData()
         for i in 0..<countLabelList.count {
             countLabelList[i].text = "\(DataStorage.shared.dataList[i])"
@@ -66,10 +70,11 @@ class DiaryViewController: UIViewController {
     }
     
     func fetchData() -> [Int] {
-        guard let count = UserDefaults.standard.array(forKey: "count")  as? [Int] else { return [] }
+        let initialArray = Array<Int>.init(repeating: 0, count: 9)
+        guard let count = UserDefaults.standard.array(forKey: "count") as? [Int] else { return initialArray }
         return count
     }
-
+    
     func configureUI() {
         // buttonUI
         happyButton.setCustomImage("행복")
@@ -97,6 +102,9 @@ class DiaryViewController: UIViewController {
         [happyCountLabel, loveCountLabel, likeCountLabel, embarrassCountLabel, upsetCountLabel, gloomyCountLabel, boredCountLabel, hungryCountLabel, sadCountLabel].forEach {
             $0.setCutomCount()
         }
+        
+        resetButton.setTitle("reset", for: .normal)
+        resetButton.setTitleColor(.systemRed, for: .normal)
     }
     
     func navigationUI() {
@@ -114,8 +122,8 @@ class DiaryViewController: UIViewController {
     }
     
     @IBAction func resetButtonClicked(_ sender: UIButton) {
+        initializeDataList(reset: true)
     }
-    
 }
 
 extension UIButton {
@@ -139,4 +147,3 @@ extension UILabel {
         font = .systemFont(ofSize:  17)
     }
 }
-
