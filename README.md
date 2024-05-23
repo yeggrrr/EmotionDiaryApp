@@ -13,6 +13,8 @@
 #
 ## 📌 구성
 - 감정 다이어리 화면: Button, Label
+- 버튼 별 count는 UserDefaults를 통해 저장되도록 구현
+- 'reset'버튼을 통해 count가 모두 0으로 초기화 될 수 있도록 구현
 #
 ## 📷 ScreenShot
 |화면|영상|
